@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorias",
+  "info": {
+    "singularName": "categoria",
+    "pluralName": "categorias",
+    "displayName": "Categoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "campos_visibles": {
+      "type": "json"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cliente.cliente",
+      "mappedBy": "categoria"
+    }
+  }
+}
